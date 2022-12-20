@@ -3,7 +3,7 @@ const User = require("../Models/user-model");
 
 
 
-const userMapper=(user)=>UserDTO(user.id,user.pseudo,user.prenom,user.nom,user.password,user.email,user.avatar,user.genre,user.age,user.role,user.description);
+const userMapper=user=> new UserDTO(user.id,user.pseudo,user.prenom,user.nom,user.password,user.email,user.avatar,user.genre,user.age,user.role,user.description);
 
 
 const userController={

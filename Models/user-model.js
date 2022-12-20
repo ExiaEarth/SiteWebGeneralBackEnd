@@ -11,7 +11,7 @@ const userSchemaDef=new Schema({
     genre:{type:String,require:true,default:'NoN',Enum:['NoN','F','H','NB']},
     age:{type:Number,require:true},
     role:{type:String,require:true,default:'User',Enum:['User','Moderateur','Administrateur']},
-    description:{type:String}
+    description:{type:String,require:true,default:'NoN'}
 },{
     collection:'User',
     timestamps:true

@@ -8,14 +8,14 @@ const uuid=require('uuid');
 const authController = require('../Controllers/auth-controller');
 
 const bodyValidation = require('../Middlewares/body-middllewares');
-const { registerValid } = require('../Validateur/auth-validateur');
+const { registerValid, logValidator } = require('../Validateur/auth-validateur');
 
 const storage=multer.diskStorage({});
 
 const upload=multer({storage});
 
 authRouter.route('/login')
-    .post()
+    .post(bodyValidation(logValidator),authController.login)
 authRouter.route('/register')
     .post(bodyValidation(registerValid),authController.register)
 
